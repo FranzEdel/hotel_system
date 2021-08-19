@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\RoomtypeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoomController;
+use App\Http\Controllers\RoomtypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,7 @@ Route::get('/admin', function () {
 // RoomType Routes
 Route::get('/admin/roomtype/{id}/delete', [RoomtypeController::class, 'destroy']);
 Route::resource('/admin/roomtype', RoomtypeController::class)->except('destroy');
+
+// Room
+Route::get('/admin/rooms/{id}/delete', [RoomController::class, 'destroy']);
+Route::resource('/admin/rooms', RoomController::class)->except('destroy');
